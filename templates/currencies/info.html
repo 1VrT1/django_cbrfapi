@@ -1,0 +1,31 @@
+{% extends 'currencies/main.html' %}
+
+{% block content %}
+    {% if message %}
+        <h3 class="message-h mt-5 text-center">{{ message }}</h3>
+    {% else %}
+        <div class="container text-center mt-5">
+            <h3 class="mb-5">{{ currency.name }} <small>({{ currency.charcode}})</small></h3>
+            <table>
+
+                <thead>
+                <tr>
+                    <td>{{ date1.date }}</td>
+                    <td>{{ date2.date }}</td>
+                    <td>Разница</td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>{{ date1.rate }}</td>
+                    <td>{{ date2.rate }}</td>
+                    <td>{{ difference }}</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}
